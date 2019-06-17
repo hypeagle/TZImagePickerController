@@ -534,6 +534,11 @@
     [TZImageManager manager].hideWhenCanNotSelect = hideWhenCanNotSelect;
 }
 
+- (void)setHideNotLocation:(BOOL)hideNotLocation {
+    _hideNotLocation = hideNotLocation;
+    [TZImageManager manager].hideNotLocation = hideNotLocation;
+}
+
 - (void)setPhotoPreviewMaxWidth:(CGFloat)photoPreviewMaxWidth {
     _photoPreviewMaxWidth = photoPreviewMaxWidth;
     if (photoPreviewMaxWidth > 800) {

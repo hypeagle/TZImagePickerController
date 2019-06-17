@@ -149,6 +149,7 @@
 /// Hide the photo what can not be selected, Default is NO
 /// 隐藏不可以选中的图片，默认是NO，不推荐将其设置为YES
 @property (nonatomic, assign) BOOL hideWhenCanNotSelect;
+@property (nonatomic, assign) BOOL hideNotLocation;
 /// Deprecated, Use statusBarStyle (顶部statusBar 是否为系统默认的黑色，默认为NO)
 @property (nonatomic, assign) BOOL isStatusBarDefault __attribute__((deprecated("Use -statusBarStyle.")));
 /// statusBar的样式，默认为UIStatusBarStyleLightContent

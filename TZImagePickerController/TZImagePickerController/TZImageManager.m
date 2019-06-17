@@ -217,6 +217,11 @@ static dispatch_once_t onceToken;
     if (!allowPickingImage && type == TZAssetModelMediaTypePhotoGif) return nil;
     
     PHAsset *phAsset = (PHAsset *)asset;
+    
+    if (self.hideNotLocation && asset.location == nil) {
+        NSLog(@"过滤没有位置数据 %d", self.hideNotLocation);
+        return nil;
+    }
     if (self.hideWhenCanNotSelect) {
         // 过滤掉尺寸不满足要求的图片
         if (![self isPhotoSelectableWithAsset:phAsset]) {

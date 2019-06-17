@@ -45,6 +45,7 @@
 @property (nonatomic, assign) NSInteger minPhotoWidthSelectable;
 @property (nonatomic, assign) NSInteger minPhotoHeightSelectable;
 @property (nonatomic, assign) BOOL hideWhenCanNotSelect;
+@property (nonatomic, assign) BOOL hideNotLocation;
 
 /// Return YES if Authorized 返回YES如果得到了授权
 - (BOOL)authorizationStatusAuthorized;
