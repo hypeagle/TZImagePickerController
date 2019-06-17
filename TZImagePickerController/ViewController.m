@@ -213,6 +213,7 @@
             imagePickerVc.allowPickingGif = self.allowPickingGifSwitch.isOn;
             imagePickerVc.allowPickingOriginalPhoto = self.allowPickingOriginalPhotoSwitch.isOn;
             imagePickerVc.allowPickingMultipleVideo = self.allowPickingMuitlpleVideoSwitch.isOn;
+            
             imagePickerVc.showSelectedIndex = self.showSelectedIndexSwitch.isOn;
             imagePickerVc.isSelectOriginalPhoto = _isSelectOriginalPhoto;
             [imagePickerVc setDidFinishPickingPhotosHandle:^(NSArray<UIImage *> *photos, NSArray *assets, BOOL isSelectOriginalPhoto) {
