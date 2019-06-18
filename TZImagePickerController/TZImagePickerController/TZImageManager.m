@@ -219,7 +219,6 @@ static dispatch_once_t onceToken;
     PHAsset *phAsset = (PHAsset *)asset;
     
     if (self.hideNotLocation && asset.location == nil) {
-        NSLog(@"过滤没有位置数据 %d", self.hideNotLocation);
         return nil;
     }
     if (self.hideWhenCanNotSelect) {

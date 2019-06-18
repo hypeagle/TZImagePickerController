@@ -201,6 +201,7 @@
             TZGifPhotoPreviewController *vc = [[TZGifPhotoPreviewController alloc] init];
             TZAssetModel *model = [TZAssetModel modelWithAsset:asset type:TZAssetModelMediaTypePhotoGif timeLength:@""];
             vc.model = model;
+            
             [self presentViewController:vc animated:YES completion:nil];
         } else if (isVideo && !self.allowPickingMuitlpleVideoSwitch.isOn) { // perview video / 预览视频
             TZVideoPlayerController *vc = [[TZVideoPlayerController alloc] init];
