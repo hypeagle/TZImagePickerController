@@ -272,7 +272,7 @@
     imagePickerVc.hideNotLocation = YES;
     imagePickerVc.allowTakePicture = self.showTakePhotoBtnSwitch.isOn; // 在内部显示拍照按钮
     imagePickerVc.allowTakeVideo = self.showTakeVideoBtnSwitch.isOn;   // 在内部显示拍视频按
-    imagePickerVc.videoMaximumDuration = 10; // 视频最大拍摄时间
+    imagePickerVc.videoMaximumDuration = 15; // 视频最大拍摄时间
     [imagePickerVc setUiImagePickerControllerSettingBlock:^(UIImagePickerController *imagePickerController) {
         imagePickerController.videoQuality = UIImagePickerControllerQualityTypeHigh;
     }];
@@ -441,11 +441,13 @@
     }];
     
     UIImagePickerControllerSourceType sourceType = UIImagePickerControllerSourceTypeCamera;
+    
     if ([UIImagePickerController isSourceTypeAvailable: UIImagePickerControllerSourceTypeCamera]) {
         self.imagePickerVc.sourceType = sourceType;
         NSMutableArray *mediaTypes = [NSMutableArray array];
         if (self.showTakeVideoBtnSwitch.isOn) {
             [mediaTypes addObject:(NSString *)kUTTypeMovie];
+            self.imagePickerVc.videoMaximumDuration = 15;
         }
         if (self.showTakePhotoBtnSwitch.isOn) {
             [mediaTypes addObject:(NSString *)kUTTypeImage];
