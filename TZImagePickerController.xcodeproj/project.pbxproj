@@ -10,12 +10,8 @@
 		083DD68D22C20A9B0018CE91 /* ZLCustomCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 083DD68A22C20A9B0018CE91 /* ZLCustomCamera.m */; };
 		083DD68E22C20A9B0018CE91 /* ZLDefine.h in Headers */ = {isa = PBXBuildFile; fileRef = 083DD68B22C20A9B0018CE91 /* ZLDefine.h */; };
 		083DD68F22C20A9B0018CE91 /* ZLCustomCamera.h in Headers */ = {isa = PBXBuildFile; fileRef = 083DD68C22C20A9B0018CE91 /* ZLCustomCamera.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		083DD69222C20AC10018CE91 /* NSBundle+ZLPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 083DD69022C20AC10018CE91 /* NSBundle+ZLPhotoBrowser.m */; };
-		083DD69322C20AC10018CE91 /* NSBundle+ZLPhotoBrowser.h in Headers */ = {isa = PBXBuildFile; fileRef = 083DD69122C20AC10018CE91 /* NSBundle+ZLPhotoBrowser.h */; };
 		083DD69A22C20B530018CE91 /* ZLPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 083DD69822C20B520018CE91 /* ZLPlayer.h */; };
 		083DD69B22C20B530018CE91 /* ZLPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 083DD69922C20B520018CE91 /* ZLPlayer.m */; };
-		083DD6A122C20FFB0018CE91 /* ZLProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 083DD69F22C20FFB0018CE91 /* ZLProgressHUD.m */; };
-		083DD6A322C2103C0018CE91 /* ZLProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = 083DD6A222C2103C0018CE91 /* ZLProgressHUD.h */; };
 		6D32B9BD1CD83640005CE1E0 /* LxGridViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D32B9BC1CD83640005CE1E0 /* LxGridViewFlowLayout.m */; };
 		6D4608311DFFC60D004FB009 /* TZGifPhotoPreviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D4608301DFFC60D004FB009 /* TZGifPhotoPreviewController.m */; };
 		6D5358CD1D64600F00928CC6 /* NSBundle+TZImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D5358CC1D64600F00928CC6 /* NSBundle+TZImagePicker.m */; };
@@ -125,12 +121,8 @@
 		083DD68A22C20A9B0018CE91 /* ZLCustomCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLCustomCamera.m; sourceTree = "<group>"; };
 		083DD68B22C20A9B0018CE91 /* ZLDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLDefine.h; sourceTree = "<group>"; };
 		083DD68C22C20A9B0018CE91 /* ZLCustomCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLCustomCamera.h; sourceTree = "<group>"; };
-		083DD69022C20AC10018CE91 /* NSBundle+ZLPhotoBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+ZLPhotoBrowser.m"; sourceTree = "<group>"; };
-		083DD69122C20AC10018CE91 /* NSBundle+ZLPhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+ZLPhotoBrowser.h"; sourceTree = "<group>"; };
 		083DD69822C20B520018CE91 /* ZLPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLPlayer.h; sourceTree = "<group>"; };
 		083DD69922C20B520018CE91 /* ZLPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLPlayer.m; sourceTree = "<group>"; };
-		083DD69F22C20FFB0018CE91 /* ZLProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLProgressHUD.m; sourceTree = "<group>"; };
-		083DD6A222C2103C0018CE91 /* ZLProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLProgressHUD.h; sourceTree = "<group>"; };
 		6D12FC191D66B71E00182C44 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		6D12FC1A1D66B71E00182C44 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		6D32B9BB1CD83640005CE1E0 /* LxGridViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LxGridViewFlowLayout.h; sourceTree = "<group>"; };
@@ -322,12 +314,8 @@
 		900EEFF51C2BBF7600EA709B /* TZImagePickerController */ = {
 			isa = PBXGroup;
 			children = (
-				083DD6A222C2103C0018CE91 /* ZLProgressHUD.h */,
-				083DD69F22C20FFB0018CE91 /* ZLProgressHUD.m */,
 				083DD69822C20B520018CE91 /* ZLPlayer.h */,
 				083DD69922C20B520018CE91 /* ZLPlayer.m */,
-				083DD69122C20AC10018CE91 /* NSBundle+ZLPhotoBrowser.h */,
-				083DD69022C20AC10018CE91 /* NSBundle+ZLPhotoBrowser.m */,
 				083DD68C22C20A9B0018CE91 /* ZLCustomCamera.h */,
 				083DD68A22C20A9B0018CE91 /* ZLCustomCamera.m */,
 				083DD68B22C20A9B0018CE91 /* ZLDefine.h */,
@@ -411,10 +399,8 @@
 			files = (
 				901CC3FA21CB757500C55443 /* TZImageRequestOperation.h in Headers */,
 				083DD68E22C20A9B0018CE91 /* ZLDefine.h in Headers */,
-				083DD69322C20AC10018CE91 /* NSBundle+ZLPhotoBrowser.h in Headers */,
 				9F763A6B1FA0731E00D9E526 /* TZImagePickerController.h in Headers */,
 				9F763A6D1FA0733700D9E526 /* NSBundle+TZImagePicker.h in Headers */,
-				083DD6A322C2103C0018CE91 /* ZLProgressHUD.h in Headers */,
 				9F763A6C1FA0733100D9E526 /* TZAssetModel.h in Headers */,
 				9F763A731FA0741D00D9E526 /* TZVideoPlayerController.h in Headers */,
 				9F763A741FA0741D00D9E526 /* TZGifPhotoPreviewController.h in Headers */,
@@ -655,14 +641,12 @@
 				9F763A501FA072E500D9E526 /* TZImagePickerController.m in Sources */,
 				9F763A521FA072E500D9E526 /* TZPhotoPickerController.m in Sources */,
 				9F763A541FA072E500D9E526 /* TZAssetCell.m in Sources */,
-				083DD69222C20AC10018CE91 /* NSBundle+ZLPhotoBrowser.m in Sources */,
 				9F763A561FA072E500D9E526 /* TZAssetModel.m in Sources */,
 				083DD68D22C20A9B0018CE91 /* ZLCustomCamera.m in Sources */,
 				9F763A581FA072E500D9E526 /* TZPhotoPreviewController.m in Sources */,
 				9F763A5A1FA072E500D9E526 /* TZPhotoPreviewCell.m in Sources */,
 				9F763A5C1FA072E500D9E526 /* TZVideoPlayerController.m in Sources */,
 				9F763A5E1FA072E500D9E526 /* TZGifPhotoPreviewController.m in Sources */,
-				083DD6A122C20FFB0018CE91 /* ZLProgressHUD.m in Sources */,
 				9F763A601FA072E500D9E526 /* TZProgressView.m in Sources */,
 				9F763A621FA072E500D9E526 /* TZImageManager.m in Sources */,
 				9F763A641FA072E500D9E526 /* TZImageCropManager.m in Sources */,
