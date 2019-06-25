@@ -6,7 +6,7 @@
 //  Copyright © 2017年 long. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+//#import <UIKit/UIKit.h>
 #import "ZLDefine.h"
 
 @interface ZLCustomCamera : UIViewController
