@@ -17,3 +17,10 @@
 
 @end
 
+static inline void ShowAlert(NSString *message, UIViewController *sender) {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:message preferredStyle:UIAlertControllerStyleAlert];
+    NSString *title = [NSBundle tz_localizedStringForKey:@"ZLPhotoBrowserOKText"];
+    UIAlertAction *action = [UIAlertAction actionWithTitle: title style:UIAlertActionStyleDefault handler:nil];
+    [alert addAction:action];
+    [sender presentViewController:alert animated:YES completion:nil];
+}
