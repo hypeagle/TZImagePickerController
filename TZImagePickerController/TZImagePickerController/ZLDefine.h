@@ -54,11 +54,11 @@
 
 
 
-#define kZLPhotoBrowserBundle [NSBundle bundleForClass:[self class]]
+//#define kZLPhotoBrowserBundle [NSBundle bundleForClass:[self class]]
 
 // 图片路径
-#define kZLPhotoBrowserSrcName(file) [@"TZImagePickerController.bundle" stringByAppendingPathComponent:file]
-#define kZLPhotoBrowserFrameworkSrcName(file) [@"TZImagePickerController/TZImagePickerController.framework/TZImagePickerController.bundle" stringByAppendingPathComponent:file]
+//#define kZLPhotoBrowserSrcName(file) [@"TZImagePickerController.bundle" stringByAppendingPathComponent:file]
+//#define kZLPhotoBrowserFrameworkSrcName(file) [@"TZImagePickerController/TZImagePickerController.framework/TZImagePickerController.bundle" stringByAppendingPathComponent:file]
 
 #define kViewWidth      [[UIScreen mainScreen] bounds].size.width
 #define kViewHeight     [[UIScreen mainScreen] bounds].size.height

@@ -11,7 +11,8 @@
 #import <CoreMotion/CoreMotion.h>
 #import "ZLPlayer.h"
 #import "TZImagePickerController.h"
-
+//#import "TZImagePickerController.h"
+//@class TZImagePickerController;
 
 #define kTopViewScale .5
 #define kBottomViewScale .7
