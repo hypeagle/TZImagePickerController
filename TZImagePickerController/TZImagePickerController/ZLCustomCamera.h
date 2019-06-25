@@ -8,6 +8,7 @@
 
 //#import <UIKit/UIKit.h>
 #import "ZLDefine.h"
+#import "TZImagePickerController.h"
 
 @interface ZLCustomCamera : UIViewController
 

@@ -21,6 +21,7 @@
 #import <MobileCoreServices/MobileCoreServices.h>
 #import "FLAnimatedImage.h"
 #import "TZImageUploadOperation.h"
+#import "ZLCustomCamera.h"
 
 @interface ViewController ()<TZImagePickerControllerDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UIImagePickerControllerDelegate,UIAlertViewDelegate,UINavigationControllerDelegate> {
     NSMutableArray *_selectedPhotos;

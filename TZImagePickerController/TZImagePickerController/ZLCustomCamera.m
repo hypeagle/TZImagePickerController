@@ -10,7 +10,6 @@
 #import <AVFoundation/AVFoundation.h>
 #import <CoreMotion/CoreMotion.h>
 #import "ZLPlayer.h"
-#import "TZImagePickerController.h"
 
 #define kTopViewScale .5
 #define kBottomViewScale .7
