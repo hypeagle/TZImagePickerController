@@ -673,12 +673,14 @@ static CGFloat itemMargin = 5;
             strongSelf.location = nil;
         }];
     }
+//    self->_imagePickerVc.videoQuality
     ZLCustomCamera *_imagePickerVc = [[ZLCustomCamera alloc] init];
-    _imagePickerVc.videoType = ZLExportVideoTypeMp4;
+    // 只支持mp4
+    _imagePickerVc.videoType = TZExportVideoTypeMp4;
     _imagePickerVc.allowTakePhoto = tzImagePickerVc.allowTakePicture;
     _imagePickerVc.allowRecordVideo = tzImagePickerVc.allowTakeVideo;
     _imagePickerVc.maxRecordDuration = tzImagePickerVc.videoMaximumDuration;
-    _imagePickerVc.sessionPreset = ZLCaptureSessionPreset1280x720;
+    _imagePickerVc.sessionPreset = tzImagePickerVc.videoQuality;
     __weak typeof(self) weakSelf = self;
     _imagePickerVc.doneBlock = ^(UIImage *image, NSURL *videoUrl) {
         __strong typeof(weakSelf) strongSelf = weakSelf;

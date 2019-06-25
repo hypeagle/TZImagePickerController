@@ -7,7 +7,7 @@
 //
 
 //#import <UIKit/UIKit.h>
-#import "ZLDefine.h"
+#import "TZDefine.h"
 #import "TZImagePickerController.h"
 
 @interface ZLCustomCamera : UIViewController
@@ -21,10 +21,10 @@
 @property (nonatomic, assign) NSInteger maxRecordDuration;
 
 //视频分辨率 默认 ZLCaptureSessionPreset1280x720
-@property (nonatomic, assign) ZLCaptureSessionPreset sessionPreset;
+@property (nonatomic, assign) TZCaptureSessionPreset sessionPreset;
 
 //视频格式 默认 ZLExportVideoTypeMp4
-@property (nonatomic, assign) ZLExportVideoType videoType;
+@property (nonatomic, assign) TZExportVideoType videoType;
 
 //录制视频时候进度条颜色 默认 RGB(80, 180, 234)
 @property (nonatomic, strong) UIColor *circleProgressColor;

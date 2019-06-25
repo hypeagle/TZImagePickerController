@@ -25,6 +25,16 @@
 #import "TZLocationManager.h"
 #import "TZPhotoPreviewController.h"
 #import "TZPhotoPreviewCell.h"
+#import "TZDefine.h"
+
+//录制视频及拍照分辨率
+typedef NS_ENUM(NSUInteger, TZCaptureSessionPreset) {
+    TZCaptureSessionPreset325x288,
+    TZCaptureSessionPreset640x480,
+    TZCaptureSessionPreset1280x720,
+    TZCaptureSessionPreset1920x1080,
+    TZCaptureSessionPreset3840x2160,
+};
 
 @class TZAlbumCell, TZAssetCell;
 @protocol TZImagePickerControllerDelegate;
@@ -94,6 +104,8 @@
 @property(nonatomic, assign) BOOL allowTakeVideo;
 /// Default value is 10 minutes / 视频最大拍摄时间，默认是10分钟，单位是秒
 @property (assign, nonatomic) NSTimeInterval videoMaximumDuration;
+
+@property (assign, nonatomic) TZCaptureSessionPreset videoQuality;
 /// Customizing UIImagePickerController's other properties, such as videoQuality / 定制UIImagePickerController的其它属性，比如视频拍摄质量videoQuality
 @property (nonatomic, copy) void(^uiImagePickerControllerSettingBlock)(UIImagePickerController *imagePickerController);
 

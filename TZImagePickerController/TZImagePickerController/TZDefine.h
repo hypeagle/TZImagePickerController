@@ -1,5 +1,5 @@
 //
-//  ZLDefine.h
+//  TZDefine.h
 //  多选相册照片
 //
 //  Created by long on 15/11/26.
@@ -10,6 +10,7 @@
 #define ZLDefine_h
 
 #import <UIKit/UIKit.h>
+#import "TZImagePickerController.h"
 
 #if DEBUG
 #define ZLLoggerDebug(format, ...) NSLog(format, ##__VA_ARGS__)
@@ -68,11 +69,11 @@
 #define kAPPName kZL_LOCALIZED_APP_NAME ?: [[NSBundle mainBundle].infoDictionary objectForKey:@"CFBundleDisplayName"] ?: [[NSBundle mainBundle].infoDictionary objectForKey:@"CFBundleName"]
 
 //自定义图片名称存于plist中的key
-#define ZLCustomImageNames @"ZLCustomImageNames"
+#define TZCustomImageNames @"TZCustomImageNames"
 //设置框架语言的key
-#define ZLLanguageTypeKey @"ZLLanguageTypeKey"
+#define TZLanguageTypeKey @"TZLanguageTypeKey"
 //自定义多语言key value存于plist中的key
-#define ZLCustomLanguageKeyValue @"ZLCustomLanguageKeyValue"
+#define TZCustomLanguageKeyValue @"TZCustomLanguageKeyValue"
 
 ////////ZLShowBigImgViewController
 #define kItemMargin 40
@@ -84,8 +85,8 @@
 #define ClippingRatioValue2 @"value2"
 #define ClippingRatioTitleFormat @"titleFormat"
 
-#define ZLPreviewPhotoObj @"ZLPreviewPhotoObj"
-#define ZLPreviewPhotoTyp @"ZLPreviewPhotoTyp"
+#define TZPreviewPhotoObj @"TZPreviewPhotoObj"
+#define TZPreviewPhotoTyp @"TZPreviewPhotoTyp"
 
 typedef NS_ENUM(NSUInteger, ZLLanguageType) {
     //跟随系统语言，默认
@@ -100,37 +101,30 @@ typedef NS_ENUM(NSUInteger, ZLLanguageType) {
     ZLLanguageJapanese,
 };
 
-//录制视频及拍照分辨率
-typedef NS_ENUM(NSUInteger, ZLCaptureSessionPreset) {
-    ZLCaptureSessionPreset325x288,
-    ZLCaptureSessionPreset640x480,
-    ZLCaptureSessionPreset1280x720,
-    ZLCaptureSessionPreset1920x1080,
-    ZLCaptureSessionPreset3840x2160,
-};
+
 
 //导出视频类型
-typedef NS_ENUM(NSUInteger, ZLExportVideoType) {
+typedef NS_ENUM(NSUInteger, TZExportVideoType) {
     //default
-    ZLExportVideoTypeMov,
-    ZLExportVideoTypeMp4,
+    TZExportVideoTypeMov,
+    TZExportVideoTypeMp4,
 };
 
 //导出视频水印位置
-typedef NS_ENUM(NSUInteger, ZLWatermarkLocation) {
-    ZLWatermarkLocationTopLeft,
-    ZLWatermarkLocationTopRight,
-    ZLWatermarkLocationCenter,
-    ZLWatermarkLocationBottomLeft,
-    ZLWatermarkLocationBottomRight,
+typedef NS_ENUM(NSUInteger, TZWatermarkLocation) {
+    TZWatermarkLocationTopLeft,
+    TZWatermarkLocationTopRight,
+    TZWatermarkLocationCenter,
+    TZWatermarkLocationBottomLeft,
+    TZWatermarkLocationBottomRight,
 };
 
 //混合预览图片时，图片类型
-typedef NS_ENUM(NSUInteger, ZLPreviewPhotoType) {
-    ZLPreviewPhotoTypePHAsset,
-    ZLPreviewPhotoTypeUIImage,
-    ZLPreviewPhotoTypeURLImage,
-    ZLPreviewPhotoTypeURLVideo,
+typedef NS_ENUM(NSUInteger, TZPreviewPhotoType) {
+    TZPreviewPhotoTypePHAsset,
+    TZPreviewPhotoTypeUIImage,
+    TZPreviewPhotoTypeURLImage,
+    TZPreviewPhotoTypeURLVideo,
 };
 
 static inline BOOL ZL_DeviceIsiPhone() {
@@ -147,11 +141,11 @@ static inline CGFloat ZL_SafeAreaBottom() {
     return temp;
 }
 
-static inline NSDictionary * GetDictForPreviewPhoto(id obj, ZLPreviewPhotoType type) {
+static inline NSDictionary * GetDictForPreviewPhoto(id obj, TZPreviewPhotoType type) {
     if (nil == obj) {
         @throw [NSException exceptionWithName:@"error" reason:@"预览对象不能为空" userInfo:nil];
     }
-    return @{ZLPreviewPhotoObj: obj, ZLPreviewPhotoTyp: @(type)};
+    return @{TZPreviewPhotoObj: obj, TZPreviewPhotoTyp: @(type)};
 }
 
 static inline void SetViewWidth(UIView *view, CGFloat width) {

@@ -396,8 +396,8 @@
         self.allowTakePhoto = YES;
         self.allowRecordVideo = YES;
         self.maxRecordDuration = 15;
-        self.sessionPreset = ZLCaptureSessionPreset1280x720;
-        self.videoType = ZLExportVideoTypeMp4;
+        self.sessionPreset = TZCaptureSessionPreset1280x720;
+        self.videoType = TZExportVideoTypeMp4;
         self.circleProgressColor = kRGB(80, 180, 234);
     }
     return self;
@@ -621,19 +621,19 @@
 - (NSString *)transformSessionPreset
 {
     switch (self.sessionPreset) {
-        case ZLCaptureSessionPreset325x288:
+        case TZCaptureSessionPreset325x288:
             return AVCaptureSessionPreset352x288;
             
-        case ZLCaptureSessionPreset640x480:
+        case TZCaptureSessionPreset640x480:
             return AVCaptureSessionPreset640x480;
             
-        case ZLCaptureSessionPreset1280x720:
+        case TZCaptureSessionPreset1280x720:
             return AVCaptureSessionPreset1280x720;
         
-        case ZLCaptureSessionPreset1920x1080:
+        case TZCaptureSessionPreset1920x1080:
             return AVCaptureSessionPreset1920x1080;
             
-        case ZLCaptureSessionPreset3840x2160:
+        case TZCaptureSessionPreset3840x2160:
         {
             if (@available(iOS 9.0, *)) {
                 return AVCaptureSessionPreset3840x2160;
