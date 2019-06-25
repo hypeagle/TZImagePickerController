@@ -679,6 +679,34 @@ static CGFloat itemMargin = 5;
     _imagePickerVc.allowRecordVideo = tzImagePickerVc.allowTakeVideo;
     _imagePickerVc.maxRecordDuration = tzImagePickerVc.videoMaximumDuration;
     _imagePickerVc.sessionPreset = ZLCaptureSessionPreset1280x720;
+    __weak typeof(self) weakSelf = self;
+    _imagePickerVc.doneBlock = ^(UIImage *image, NSURL *videoUrl) {
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        if (image != nil) {
+            TZImagePickerController *imagePickerVc = (TZImagePickerController *)strongSelf.navigationController;
+            [imagePickerVc showProgressHUD];
+            UIImage *photo = image;
+            if (photo) {
+                [[TZImageManager manager] savePhotoWithImage:photo location:strongSelf.location completion:^(PHAsset *asset, NSError *error){
+                    if (!error) {
+                        [strongSelf addPHAsset:asset];
+                    }
+                }];
+                strongSelf.location = nil;
+            }
+        } else if (videoUrl != nil) {
+            TZImagePickerController *imagePickerVc = (TZImagePickerController *)strongSelf.navigationController;
+            [imagePickerVc showProgressHUD];
+            if (videoUrl) {
+                [[TZImageManager manager] saveVideoWithUrl:videoUrl location:strongSelf.location completion:^(PHAsset *asset, NSError *error) {
+                    if (!error) {
+                        [strongSelf addPHAsset:asset];
+                    }
+                }];
+                strongSelf.location = nil;
+            }
+        }
+    };
     [self presentViewController:_imagePickerVc animated:YES completion:nil];
 }
 
@@ -783,7 +811,7 @@ static CGFloat itemMargin = 5;
     }
 }
 
-#pragma mark - UIImagePickerControllerDelegate
+#pragma mark - UIImagePickerControllerDelegate 自定义了相机部分
 
 - (void)imagePickerController:(UIImagePickerController*)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     [picker dismissViewControllerAnimated:YES completion:nil];
