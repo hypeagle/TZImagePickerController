@@ -18,6 +18,7 @@
 #import "TZLocationManager.h"
 #import <MobileCoreServices/MobileCoreServices.h>
 #import "TZImageRequestOperation.h"
+#import "ZLCustomCamera.h"
 
 @interface TZPhotoPickerController ()<UICollectionViewDataSource,UICollectionViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIAlertViewDelegate> {
     NSMutableArray *_models;
@@ -672,26 +673,13 @@ static CGFloat itemMargin = 5;
             strongSelf.location = nil;
         }];
     }
-    
-    UIImagePickerControllerSourceType sourceType = UIImagePickerControllerSourceTypeCamera;
-    if ([UIImagePickerController isSourceTypeAvailable: sourceType]) {
-        self.imagePickerVc.sourceType = sourceType;
-        NSMutableArray *mediaTypes = [NSMutableArray array];
-        if (tzImagePickerVc.allowTakePicture) {
-            [mediaTypes addObject:(NSString *)kUTTypeImage];
-        }
-        if (tzImagePickerVc.allowTakeVideo) {
-            [mediaTypes addObject:(NSString *)kUTTypeMovie];
-            self.imagePickerVc.videoMaximumDuration = tzImagePickerVc.videoMaximumDuration;
-        }
-        self.imagePickerVc.mediaTypes= mediaTypes;
-        if (tzImagePickerVc.uiImagePickerControllerSettingBlock) {
-            tzImagePickerVc.uiImagePickerControllerSettingBlock(_imagePickerVc);
-        }
-        [self presentViewController:_imagePickerVc animated:YES completion:nil];
-    } else {
-        NSLog(@"模拟器中无法打开照相机,请在真机中使用");
-    }
+    ZLCustomCamera *_imagePickerVc = [[ZLCustomCamera alloc] init];
+    _imagePickerVc.videoType = ZLExportVideoTypeMp4;
+    _imagePickerVc.allowTakePhoto = tzImagePickerVc.allowTakePicture;
+    _imagePickerVc.allowRecordVideo = tzImagePickerVc.allowTakeVideo;
+    _imagePickerVc.maxRecordDuration = tzImagePickerVc.videoMaximumDuration;
+    _imagePickerVc.sessionPreset = ZLCaptureSessionPreset1280x720;
+    [self presentViewController:_imagePickerVc animated:YES completion:nil];
 }
 
 - (void)refreshBottomToolBarStatus {
