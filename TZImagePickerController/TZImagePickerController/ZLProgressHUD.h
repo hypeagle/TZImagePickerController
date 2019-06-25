@@ -1,21 +1,21 @@
+////
+////  ZLProgressHUD.h
+////  ZLPhotoBrowser
+////
+////  Created by long on 16/2/15.
+////  Copyright © 2016年 long. All rights reserved.
+////
 //
-//  ZLProgressHUD.h
-//  ZLPhotoBrowser
+//#import <UIKit/UIKit.h>
 //
-//  Created by long on 16/2/15.
-//  Copyright © 2016年 long. All rights reserved.
+//@interface ZLProgressHUD : UIView
 //
-
-#import <UIKit/UIKit.h>
-
-@interface ZLProgressHUD : UIView
-
-@property (nonatomic, copy, nullable) void (^timeoutBlock)(void);
-
-- (void)show;
-
-- (void)showWithTimeout:(NSTimeInterval)timeout;
-
-- (void)hide;
-
-@end
+//@property (nonatomic, copy, nullable) void (^timeoutBlock)(void);
+//
+//- (void)show;
+//
+//- (void)showWithTimeout:(NSTimeInterval)timeout;
+//
+//- (void)hide;
+//
+//@end

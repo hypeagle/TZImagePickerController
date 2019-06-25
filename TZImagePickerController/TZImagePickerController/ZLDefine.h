@@ -9,57 +9,58 @@
 #ifndef ZLDefine_h
 #define ZLDefine_h
 
-#import "ZLProgressHUD.h"
+#import <UIKit/UIKit.h>
 #import "NSBundle+ZLPhotoBrowser.h"
+#import "TZImagePickerController.h"
 
-#define ZLPhotoBrowserCameraText @"ZLPhotoBrowserCameraText"
-#define ZLPhotoBrowserCameraRecordText @"ZLPhotoBrowserCameraRecordText"
-#define ZLPhotoBrowserAblumText @"ZLPhotoBrowserAblumText"
-#define ZLPhotoBrowserCancelText @"ZLPhotoBrowserCancelText"
-#define ZLPhotoBrowserOriginalText @"ZLPhotoBrowserOriginalText"
-#define ZLPhotoBrowserDoneText @"ZLPhotoBrowserDoneText"
-#define ZLPhotoBrowserOKText @"ZLPhotoBrowserOKText"
-#define ZLPhotoBrowserBackText @"ZLPhotoBrowserBackText"
-#define ZLPhotoBrowserPhotoText @"ZLPhotoBrowserPhotoText"
-#define ZLPhotoBrowserPreviewText @"ZLPhotoBrowserPreviewText"
-#define ZLPhotoBrowserLoadingText @"ZLPhotoBrowserLoadingText"
-#define ZLPhotoBrowserHandleText @"ZLPhotoBrowserHandleText"
-#define ZLPhotoBrowserSaveImageErrorText @"ZLPhotoBrowserSaveImageErrorText"
-#define ZLPhotoBrowserMaxSelectCountText @"ZLPhotoBrowserMaxSelectCountText"
-#define ZLPhotoBrowserNoCameraAuthorityText @"ZLPhotoBrowserNoCameraAuthorityText"
-#define ZLPhotoBrowserNoAblumAuthorityText @"ZLPhotoBrowserNoAblumAuthorityText"
-#define ZLPhotoBrowserNoMicrophoneAuthorityText @"ZLPhotoBrowserNoMicrophoneAuthorityText"
-#define ZLPhotoBrowseriCloudPhotoText @"ZLPhotoBrowseriCloudPhotoText"
-#define ZLPhotoBrowserGifPreviewText @"ZLPhotoBrowserGifPreviewText"
-#define ZLPhotoBrowserVideoPreviewText @"ZLPhotoBrowserVideoPreviewText"
-#define ZLPhotoBrowserLivePhotoPreviewText @"ZLPhotoBrowserLivePhotoPreviewText"
-#define ZLPhotoBrowserNoPhotoText @"ZLPhotoBrowserNoPhotoText"
-#define ZLPhotoBrowserCannotSelectVideo @"ZLPhotoBrowserCannotSelectVideo"
-#define ZLPhotoBrowserCannotSelectGIF @"ZLPhotoBrowserCannotSelectGIF"
-#define ZLPhotoBrowserCannotSelectLivePhoto @"ZLPhotoBrowserCannotSelectLivePhoto"
-#define ZLPhotoBrowseriCloudVideoText @"ZLPhotoBrowseriCloudVideoText"
-#define ZLPhotoBrowserEditText @"ZLPhotoBrowserEditText"
-#define ZLPhotoBrowserSaveText @"ZLPhotoBrowserSaveText"
-#define ZLPhotoBrowserMaxVideoDurationText @"ZLPhotoBrowserMaxVideoDurationText"
-#define ZLPhotoBrowserLoadNetImageFailed @"ZLPhotoBrowserLoadNetImageFailed"
-#define ZLPhotoBrowserSaveVideoFailed @"ZLPhotoBrowserSaveVideoFailed"
-#define ZLPhotoBrowserRequestTimeout @"ZLPhotoBrowserRequestTimeout"
-
-#define ZLPhotoBrowserCameraRoll @"ZLPhotoBrowserCameraRoll"
-#define ZLPhotoBrowserPanoramas @"ZLPhotoBrowserPanoramas"
-#define ZLPhotoBrowserVideos @"ZLPhotoBrowserVideos"
-#define ZLPhotoBrowserFavorites @"ZLPhotoBrowserFavorites"
-#define ZLPhotoBrowserTimelapses @"ZLPhotoBrowserTimelapses"
-#define ZLPhotoBrowserRecentlyAdded @"ZLPhotoBrowserRecentlyAdded"
-#define ZLPhotoBrowserBursts @"ZLPhotoBrowserBursts"
-#define ZLPhotoBrowserSlomoVideos @"ZLPhotoBrowserSlomoVideos"
-#define ZLPhotoBrowserSelfPortraits @"ZLPhotoBrowserSelfPortraits"
-#define ZLPhotoBrowserScreenshots @"ZLPhotoBrowserScreenshots"
-#define ZLPhotoBrowserDepthEffect @"ZLPhotoBrowserDepthEffect"
-#define ZLPhotoBrowserLivePhotos @"ZLPhotoBrowserLivePhotos"
-#define ZLPhotoBrowserAnimated @"ZLPhotoBrowserAnimated"
-#define ZLPhotoBrowserMaxVideoSelectCountInMix @"ZLPhotoBrowserMaxVideoSelectCountInMix"
-#define ZLPhotoBrowserMinVideoSelectCountInMix @"ZLPhotoBrowserMinVideoSelectCountInMix"
+//#define ZLPhotoBrowserCameraText @"ZLPhotoBrowserCameraText"
+//#define ZLPhotoBrowserCameraRecordText @"ZLPhotoBrowserCameraRecordText"
+//#define ZLPhotoBrowserAblumText @"ZLPhotoBrowserAblumText"
+//#define ZLPhotoBrowserCancelText @"ZLPhotoBrowserCancelText"
+//#define ZLPhotoBrowserOriginalText @"ZLPhotoBrowserOriginalText"
+//#define ZLPhotoBrowserDoneText @"ZLPhotoBrowserDoneText"
+//#define ZLPhotoBrowserOKText @"ZLPhotoBrowserOKText"
+//#define ZLPhotoBrowserBackText @"ZLPhotoBrowserBackText"
+//#define ZLPhotoBrowserPhotoText @"ZLPhotoBrowserPhotoText"
+//#define ZLPhotoBrowserPreviewText @"ZLPhotoBrowserPreviewText"
+//#define ZLPhotoBrowserLoadingText @"ZLPhotoBrowserLoadingText"
+//#define ZLPhotoBrowserHandleText @"ZLPhotoBrowserHandleText"
+//#define ZLPhotoBrowserSaveImageErrorText @"ZLPhotoBrowserSaveImageErrorText"
+//#define ZLPhotoBrowserMaxSelectCountText @"ZLPhotoBrowserMaxSelectCountText"
+//#define ZLPhotoBrowserNoCameraAuthorityText @"ZLPhotoBrowserNoCameraAuthorityText"
+//#define ZLPhotoBrowserNoAblumAuthorityText @"ZLPhotoBrowserNoAblumAuthorityText"
+//#define ZLPhotoBrowserNoMicrophoneAuthorityText @"ZLPhotoBrowserNoMicrophoneAuthorityText"
+//#define ZLPhotoBrowseriCloudPhotoText @"ZLPhotoBrowseriCloudPhotoText"
+//#define ZLPhotoBrowserGifPreviewText @"ZLPhotoBrowserGifPreviewText"
+//#define ZLPhotoBrowserVideoPreviewText @"ZLPhotoBrowserVideoPreviewText"
+//#define ZLPhotoBrowserLivePhotoPreviewText @"ZLPhotoBrowserLivePhotoPreviewText"
+//#define ZLPhotoBrowserNoPhotoText @"ZLPhotoBrowserNoPhotoText"
+//#define ZLPhotoBrowserCannotSelectVideo @"ZLPhotoBrowserCannotSelectVideo"
+//#define ZLPhotoBrowserCannotSelectGIF @"ZLPhotoBrowserCannotSelectGIF"
+//#define ZLPhotoBrowserCannotSelectLivePhoto @"ZLPhotoBrowserCannotSelectLivePhoto"
+//#define ZLPhotoBrowseriCloudVideoText @"ZLPhotoBrowseriCloudVideoText"
+//#define ZLPhotoBrowserEditText @"ZLPhotoBrowserEditText"
+//#define ZLPhotoBrowserSaveText @"ZLPhotoBrowserSaveText"
+//#define ZLPhotoBrowserMaxVideoDurationText @"ZLPhotoBrowserMaxVideoDurationText"
+//#define ZLPhotoBrowserLoadNetImageFailed @"ZLPhotoBrowserLoadNetImageFailed"
+//#define ZLPhotoBrowserSaveVideoFailed @"ZLPhotoBrowserSaveVideoFailed"
+//#define ZLPhotoBrowserRequestTimeout @"ZLPhotoBrowserRequestTimeout"
+//
+//#define ZLPhotoBrowserCameraRoll @"ZLPhotoBrowserCameraRoll"
+//#define ZLPhotoBrowserPanoramas @"ZLPhotoBrowserPanoramas"
+//#define ZLPhotoBrowserVideos @"ZLPhotoBrowserVideos"
+//#define ZLPhotoBrowserFavorites @"ZLPhotoBrowserFavorites"
+//#define ZLPhotoBrowserTimelapses @"ZLPhotoBrowserTimelapses"
+//#define ZLPhotoBrowserRecentlyAdded @"ZLPhotoBrowserRecentlyAdded"
+//#define ZLPhotoBrowserBursts @"ZLPhotoBrowserBursts"
+//#define ZLPhotoBrowserSlomoVideos @"ZLPhotoBrowserSlomoVideos"
+//#define ZLPhotoBrowserSelfPortraits @"ZLPhotoBrowserSelfPortraits"
+//#define ZLPhotoBrowserScreenshots @"ZLPhotoBrowserScreenshots"
+//#define ZLPhotoBrowserDepthEffect @"ZLPhotoBrowserDepthEffect"
+//#define ZLPhotoBrowserLivePhotos @"ZLPhotoBrowserLivePhotos"
+//#define ZLPhotoBrowserAnimated @"ZLPhotoBrowserAnimated"
+//#define ZLPhotoBrowserMaxVideoSelectCountInMix @"ZLPhotoBrowserMaxVideoSelectCountInMix"
+//#define ZLPhotoBrowserMinVideoSelectCountInMix @"ZLPhotoBrowserMinVideoSelectCountInMix"
 
 
 #if DEBUG
@@ -225,21 +226,21 @@ static inline CGFloat GetViewHeight(UIView *view) {
     return view.frame.size.height;
 }
 
-static inline NSString *  GetLocalLanguageTextValue (NSString *key) {
-    NSDictionary *dic = [[NSUserDefaults standardUserDefaults] valueForKey:ZLCustomLanguageKeyValue];
-    if ([dic.allKeys containsObject:key]) {
-        return dic[key];
-    }
-    return [NSBundle zlLocalizedStringForKey:key];
-}
+//static inline NSString *  GetLocalLanguageTextValue (NSString *key) {
+//    NSDictionary *dic = [[NSUserDefaults standardUserDefaults] valueForKey:ZLCustomLanguageKeyValue];
+//    if ([dic.allKeys containsObject:key]) {
+//        return dic[key];
+//    }
+//    return [NSBundle zlLocalizedStringForKey:key];
+//}
 
-static inline UIImage * GetImageWithName(NSString *name) {
-    NSArray *names = [[NSUserDefaults standardUserDefaults] valueForKey:ZLCustomImageNames];
-    if ([names containsObject:name]) {
-        return [UIImage imageNamed:name];
-    }
-    return [UIImage imageNamed:kZLPhotoBrowserSrcName(name)]?:[UIImage imageNamed:kZLPhotoBrowserFrameworkSrcName(name)];
-}
+//static inline UIImage * GetImageWithName(NSString *name) {
+//    NSArray *names = [[NSUserDefaults standardUserDefaults] valueForKey:ZLCustomImageNames];
+//    if ([names containsObject:name]) {
+//        return [UIImage imageNamed:name];
+//    }
+//    return [UIImage imageNamed:kZLPhotoBrowserSrcName(name)]?:[UIImage imageNamed:kZLPhotoBrowserFrameworkSrcName(name)];
+//}
 
 static inline CGFloat GetMatchValue(NSString *text, CGFloat fontSize, BOOL isHeightFixed, CGFloat fixedValue) {
     CGSize size;
@@ -263,7 +264,8 @@ static inline CGFloat GetMatchValue(NSString *text, CGFloat fontSize, BOOL isHei
 
 static inline void ShowAlert(NSString *message, UIViewController *sender) {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:message preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *action = [UIAlertAction actionWithTitle:GetLocalLanguageTextValue(ZLPhotoBrowserOKText) style:UIAlertActionStyleDefault handler:nil];
+    NSString *title = [NSBundle tz_localizedStringForKey:@"ZLPhotoBrowserOKText"];
+    UIAlertAction *action = [UIAlertAction actionWithTitle: title style:UIAlertActionStyleDefault handler:nil];
     [alert addAction:action];
     [sender presentViewController:alert animated:YES completion:nil];
 }

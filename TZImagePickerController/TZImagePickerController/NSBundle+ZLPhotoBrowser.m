@@ -10,7 +10,7 @@
 //#import "ZLPhotoActionSheet.h"
 #import "ZLDefine.h"
 #import "TZImagePickerController.h"
-//@class TZImagePickerController;
+
 
 @implementation NSBundle (ZLPhotoBrowser)
 
