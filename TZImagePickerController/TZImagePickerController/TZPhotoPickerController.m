@@ -675,12 +675,13 @@ static CGFloat itemMargin = 5;
     }
 //    self->_imagePickerVc.videoQuality
     TZCustomCamera *_imagePickerVc = [[TZCustomCamera alloc] init];
-    // 只支持mp4
+    /// 只支持mp4
     _imagePickerVc.videoType = TZExportVideoTypeMp4;
     _imagePickerVc.allowTakePhoto = tzImagePickerVc.allowTakePicture;
     _imagePickerVc.allowRecordVideo = tzImagePickerVc.allowTakeVideo;
     _imagePickerVc.maxRecordDuration = tzImagePickerVc.videoMaximumDuration;
     _imagePickerVc.sessionPreset = tzImagePickerVc.videoQuality;
+    _imagePickerVc.circleProgressColor = tzImagePickerVc.circleProgressColor;
     __weak typeof(self) weakSelf = self;
     _imagePickerVc.doneBlock = ^(UIImage *image, NSURL *videoUrl) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
