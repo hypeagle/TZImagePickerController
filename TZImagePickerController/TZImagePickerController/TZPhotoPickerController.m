@@ -6,7 +6,7 @@
 //  Copyright © 2015年 谭真. All rights reserved.
 //
 
-#import "ZLCustomCamera.h"
+#import "TZCustomCamera.h"
 #import "TZPhotoPickerController.h"
 #import "TZImagePickerController.h"
 #import "TZPhotoPreviewController.h"
@@ -674,7 +674,7 @@ static CGFloat itemMargin = 5;
         }];
     }
 //    self->_imagePickerVc.videoQuality
-    ZLCustomCamera *_imagePickerVc = [[ZLCustomCamera alloc] init];
+    TZCustomCamera *_imagePickerVc = [[TZCustomCamera alloc] init];
     // 只支持mp4
     _imagePickerVc.videoType = TZExportVideoTypeMp4;
     _imagePickerVc.allowTakePhoto = tzImagePickerVc.allowTakePicture;

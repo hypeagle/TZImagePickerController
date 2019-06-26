@@ -1,5 +1,5 @@
 //
-//  ZLCustomCamera.h
+//  TZCustomCamera.h
 //  CustomCamera
 //
 //  Created by long on 2017/6/26.
@@ -10,7 +10,7 @@
 #import "TZDefine.h"
 #import "TZImagePickerController.h"
 
-@interface ZLCustomCamera : UIViewController
+@interface TZCustomCamera : UIViewController
 
 //是否允许拍照 默认YES
 @property (nonatomic, assign) BOOL allowTakePhoto;

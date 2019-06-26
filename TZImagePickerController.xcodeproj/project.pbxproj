@@ -10,11 +10,11 @@
 		083DD68E22C20A9B0018CE91 /* TZDefine.h in Headers */ = {isa = PBXBuildFile; fileRef = 083DD68B22C20A9B0018CE91 /* TZDefine.h */; };
 		083DD69A22C20B530018CE91 /* ZLPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 083DD69822C20B520018CE91 /* ZLPlayer.h */; };
 		083DD69B22C20B530018CE91 /* ZLPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 083DD69922C20B520018CE91 /* ZLPlayer.m */; };
-		0872FB2F22C230AC003CA01D /* ZLCustomCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 083DD68A22C20A9B0018CE91 /* ZLCustomCamera.m */; };
-		0872FB3122C230B3003CA01D /* ZLCustomCamera.h in Headers */ = {isa = PBXBuildFile; fileRef = 083DD68C22C20A9B0018CE91 /* ZLCustomCamera.h */; };
+		0872FB2F22C230AC003CA01D /* TZCustomCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 083DD68A22C20A9B0018CE91 /* TZCustomCamera.m */; };
+		0872FB3122C230B3003CA01D /* TZCustomCamera.h in Headers */ = {isa = PBXBuildFile; fileRef = 083DD68C22C20A9B0018CE91 /* TZCustomCamera.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0872FB3322C23106003CA01D /* TZAssetCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 900EEFFF1C2BD7E400EA709B /* TZAssetCell.h */; };
 		0872FB3422C23138003CA01D /* TZTestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9038D5901C3974F0007DE549 /* TZTestCell.m */; };
-		0872FB3722C231B6003CA01D /* ZLCustomCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 083DD68A22C20A9B0018CE91 /* ZLCustomCamera.m */; };
+		0872FB3722C231B6003CA01D /* TZCustomCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 083DD68A22C20A9B0018CE91 /* TZCustomCamera.m */; };
 		0872FB3822C231BA003CA01D /* ZLPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 083DD69922C20B520018CE91 /* ZLPlayer.m */; };
 		0872FB3922C231E0003CA01D /* TZImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 900EEFF71C2BBF9500EA709B /* TZImagePickerController.m */; };
 		6D32B9BD1CD83640005CE1E0 /* LxGridViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D32B9BC1CD83640005CE1E0 /* LxGridViewFlowLayout.m */; };
@@ -120,9 +120,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		083DD68A22C20A9B0018CE91 /* ZLCustomCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLCustomCamera.m; sourceTree = "<group>"; };
+		083DD68A22C20A9B0018CE91 /* TZCustomCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZCustomCamera.m; sourceTree = "<group>"; };
 		083DD68B22C20A9B0018CE91 /* TZDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZDefine.h; sourceTree = "<group>"; };
-		083DD68C22C20A9B0018CE91 /* ZLCustomCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLCustomCamera.h; sourceTree = "<group>"; };
+		083DD68C22C20A9B0018CE91 /* TZCustomCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZCustomCamera.h; sourceTree = "<group>"; };
 		083DD69822C20B520018CE91 /* ZLPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLPlayer.h; sourceTree = "<group>"; };
 		083DD69922C20B520018CE91 /* ZLPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLPlayer.m; sourceTree = "<group>"; };
 		6D12FC191D66B71E00182C44 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
@@ -318,8 +318,8 @@
 			children = (
 				083DD69822C20B520018CE91 /* ZLPlayer.h */,
 				083DD69922C20B520018CE91 /* ZLPlayer.m */,
-				083DD68C22C20A9B0018CE91 /* ZLCustomCamera.h */,
-				083DD68A22C20A9B0018CE91 /* ZLCustomCamera.m */,
+				083DD68C22C20A9B0018CE91 /* TZCustomCamera.h */,
+				083DD68A22C20A9B0018CE91 /* TZCustomCamera.m */,
 				083DD68B22C20A9B0018CE91 /* TZDefine.h */,
 				900EEFF61C2BBF9500EA709B /* TZImagePickerController.h */,
 				900EEFF71C2BBF9500EA709B /* TZImagePickerController.m */,
@@ -407,7 +407,7 @@
 				9F763A731FA0741D00D9E526 /* TZVideoPlayerController.h in Headers */,
 				9F763A741FA0741D00D9E526 /* TZGifPhotoPreviewController.h in Headers */,
 				9F763A761FA0741D00D9E526 /* TZImageManager.h in Headers */,
-				0872FB3122C230B3003CA01D /* ZLCustomCamera.h in Headers */,
+				0872FB3122C230B3003CA01D /* TZCustomCamera.h in Headers */,
 				083DD69A22C20B530018CE91 /* ZLPlayer.h in Headers */,
 				9F763A781FA0741D00D9E526 /* TZLocationManager.h in Headers */,
 				9F763A711FA0741D00D9E526 /* TZPhotoPreviewController.h in Headers */,
@@ -606,7 +606,7 @@
 				900EF0161C2C134900EA709B /* TZPhotoPreviewCell.m in Sources */,
 				900E65871C2BB8D5003D9A9E /* ViewController.m in Sources */,
 				90CE84AE1C3A89EF003D0779 /* TZImageManager.m in Sources */,
-				0872FB3722C231B6003CA01D /* ZLCustomCamera.m in Sources */,
+				0872FB3722C231B6003CA01D /* TZCustomCamera.m in Sources */,
 				901F2295215CABD600F604ED /* FLAnimatedImage.m in Sources */,
 				900E65841C2BB8D5003D9A9E /* AppDelegate.m in Sources */,
 				0872FB3422C23138003CA01D /* TZTestCell.m in Sources */,
@@ -651,7 +651,7 @@
 				9F763A5C1FA072E500D9E526 /* TZVideoPlayerController.m in Sources */,
 				9F763A5E1FA072E500D9E526 /* TZGifPhotoPreviewController.m in Sources */,
 				9F763A601FA072E500D9E526 /* TZProgressView.m in Sources */,
-				0872FB2F22C230AC003CA01D /* ZLCustomCamera.m in Sources */,
+				0872FB2F22C230AC003CA01D /* TZCustomCamera.m in Sources */,
 				9F763A621FA072E500D9E526 /* TZImageManager.m in Sources */,
 				9F763A641FA072E500D9E526 /* TZImageCropManager.m in Sources */,
 				9F763A661FA072E500D9E526 /* TZLocationManager.m in Sources */,

@@ -1,12 +1,12 @@
 //
-//  ZLCustomCamera.m
+//  TZCustomCamera.m
 //  CustomCamera
 //
 //  Created by long on 2017/6/26.
 //  Copyright © 2017年 long. All rights reserved.
 //
 
-#import "ZLCustomCamera.h"
+#import "TZCustomCamera.h"
 #import <AVFoundation/AVFoundation.h>
 #import <CoreMotion/CoreMotion.h>
 #import "ZLPlayer.h"
@@ -337,7 +337,7 @@
 
 //--------------------------------------------------------//
 //--------------------------------------------------------//
-@interface ZLCustomCamera () <CameraToolViewDelegate, AVCaptureFileOutputRecordingDelegate, UIGestureRecognizerDelegate>
+@interface TZCustomCamera () <CameraToolViewDelegate, AVCaptureFileOutputRecordingDelegate, UIGestureRecognizerDelegate>
 {
     //拖拽手势开始的录制
     BOOL _dragStart;
@@ -376,7 +376,7 @@
 
 @end
 
-@implementation ZLCustomCamera
+@implementation TZCustomCamera
 
 - (void)dealloc
 {
