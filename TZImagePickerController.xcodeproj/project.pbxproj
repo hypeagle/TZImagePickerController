@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		083DD68E22C20A9B0018CE91 /* TZDefine.h in Headers */ = {isa = PBXBuildFile; fileRef = 083DD68B22C20A9B0018CE91 /* TZDefine.h */; };
+		083DD68E22C20A9B0018CE91 /* TZDefine.h in Headers */ = {isa = PBXBuildFile; fileRef = 083DD68B22C20A9B0018CE91 /* TZDefine.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		083DD69A22C20B530018CE91 /* ZLPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 083DD69822C20B520018CE91 /* ZLPlayer.h */; };
 		083DD69B22C20B530018CE91 /* ZLPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 083DD69922C20B520018CE91 /* ZLPlayer.m */; };
 		0872FB2F22C230AC003CA01D /* TZCustomCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 083DD68A22C20A9B0018CE91 /* TZCustomCamera.m */; };
@@ -400,7 +400,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				901CC3FA21CB757500C55443 /* TZImageRequestOperation.h in Headers */,
-				083DD68E22C20A9B0018CE91 /* TZDefine.h in Headers */,
 				9F763A6B1FA0731E00D9E526 /* TZImagePickerController.h in Headers */,
 				9F763A6D1FA0733700D9E526 /* NSBundle+TZImagePicker.h in Headers */,
 				9F763A6C1FA0733100D9E526 /* TZAssetModel.h in Headers */,
@@ -409,6 +408,7 @@
 				9F763A761FA0741D00D9E526 /* TZImageManager.h in Headers */,
 				0872FB3122C230B3003CA01D /* TZCustomCamera.h in Headers */,
 				083DD69A22C20B530018CE91 /* ZLPlayer.h in Headers */,
+				083DD68E22C20A9B0018CE91 /* TZDefine.h in Headers */,
 				9F763A781FA0741D00D9E526 /* TZLocationManager.h in Headers */,
 				9F763A711FA0741D00D9E526 /* TZPhotoPreviewController.h in Headers */,
 				9F763A721FA0741D00D9E526 /* TZPhotoPreviewCell.h in Headers */,
