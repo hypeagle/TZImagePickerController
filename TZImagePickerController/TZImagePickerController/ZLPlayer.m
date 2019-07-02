@@ -20,7 +20,6 @@
 
 - (void)dealloc
 {
-    [self removeObserver];
     [_player pause];
     _player = nil;
 //    NSLog(@"---- %s", __FUNCTION__);
@@ -38,7 +37,6 @@
 - (void)setupUI
 {
     self.backgroundColor = [UIColor blackColor];
-    self.alpha = 0;
     self.playerLayer = [[AVPlayerLayer alloc] init];
     self.playerLayer.frame = self.bounds;
     [self.layer addSublayer:self.playerLayer];
