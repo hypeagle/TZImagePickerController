@@ -820,8 +820,10 @@
         [self.view insertSubview:_takedImageView belowSubview:self.toolView];
     }
     __weak typeof(self) weakSelf = self;
+    
     [self.imageOutPut captureStillImageAsynchronouslyFromConnection:videoConnection completionHandler:^(CMSampleBufferRef imageDataSampleBuffer, NSError *error) {
         if (imageDataSampleBuffer == NULL) {
+            ZLLoggerDebug(@"获取照片失败");
             return;
         }
         NSData * imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
@@ -924,14 +926,16 @@
 
 - (void)captureOutput:(AVCaptureFileOutput *)output didFinishRecordingToOutputFileAtURL:(NSURL *)outputFileURL fromConnections:(NSArray<AVCaptureConnection *> *)connections error:(NSError *)error
 {
-    if (CMTimeGetSeconds(output.recordedDuration) < 1) {
-        if (self.allowTakePhoto) {
-            //视频长度小于1s 允许拍照则拍照，不允许拍照，则保存小于1s的视频
-            ZLLoggerDebug(@"视频长度小于1s，按拍照处理");
-            [self onTakePicture];
-            return;
-        }
-    }
+    // MARK: 这条逻辑 稍后跟进
+//    if (CMTimeGetSeconds(output.recordedDuration) < 1) {
+//        if (self.allowTakePhoto) {
+//            //视频长度小于1s 允许拍照则拍照，不允许拍照，则保存小于1s的视频
+//            ZLLoggerDebug(@"视频长度小于1s，按拍照处理");
+//            [self onTakePicture];
+//
+//            return;
+//        }
+//    }
     
     self.videoUrl = outputFileURL;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
