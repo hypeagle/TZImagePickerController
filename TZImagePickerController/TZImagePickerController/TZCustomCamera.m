@@ -448,7 +448,7 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    
+    [_playerView pause];
     [UIApplication sharedApplication].statusBarHidden = NO;
     [self.motionManager stopDeviceMotionUpdates];
     self.motionManager = nil;
@@ -924,18 +924,25 @@
     [self.toolView startAnimate];
 }
 
+- (UIAlertController *)showAlertWithTitle:(NSString *)title {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:nil preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addAction:[UIAlertAction actionWithTitle:[NSBundle tz_localizedStringForKey:@"OK"] style:UIAlertActionStyleDefault handler:nil]];
+    [self presentViewController:alertController animated:YES completion:nil];
+    return alertController;
+}
+
 - (void)captureOutput:(AVCaptureFileOutput *)output didFinishRecordingToOutputFileAtURL:(NSURL *)outputFileURL fromConnections:(NSArray<AVCaptureConnection *> *)connections error:(NSError *)error
 {
     // MARK: 这条逻辑 稍后跟进
-//    if (CMTimeGetSeconds(output.recordedDuration) < 1) {
-//        if (self.allowTakePhoto) {
-//            //视频长度小于1s 允许拍照则拍照，不允许拍照，则保存小于1s的视频
-//            ZLLoggerDebug(@"视频长度小于1s，按拍照处理");
-//            [self onTakePicture];
-//
-//            return;
-//        }
-//    }
+    if (CMTimeGetSeconds(output.recordedDuration) < 3) {
+        if (self.allowTakePhoto) {
+            //视频长度小于1s 允许拍照则拍照，不允许拍照，则保存小于1s的视频
+            ZLLoggerDebug(@"视频长度小于1s，提醒重新拍摄");
+            [self showAlertWithTitle:@"视频长度小于3s, 请重新拍摄!"];
+            [self.toolView retake];
+            return;
+        }
+    }
     
     self.videoUrl = outputFileURL;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
