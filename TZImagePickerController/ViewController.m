@@ -352,6 +352,8 @@
     // 设置是否显示图片序号
     imagePickerVc.showSelectedIndex = self.showSelectedIndexSwitch.isOn;
     
+    
+    
     // 自定义gif播放方案
     [[TZImagePickerConfig sharedInstance] setGifImagePlayBlock:^(TZPhotoPreviewView *view, UIImageView *imageView, NSData *gifData, NSDictionary *info) {
         FLAnimatedImage *animatedImage = [FLAnimatedImage animatedImageWithGIFData:gifData];
