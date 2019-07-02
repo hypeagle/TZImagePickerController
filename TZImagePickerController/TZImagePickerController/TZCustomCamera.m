@@ -926,20 +926,25 @@
 
 - (UIAlertController *)showAlertWithTitle:(NSString *)title {
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:nil preferredStyle:UIAlertControllerStyleAlert];
-    [alertController addAction:[UIAlertAction actionWithTitle:[NSBundle tz_localizedStringForKey:@"OK"] style:UIAlertActionStyleDefault handler:nil]];
+//    [alertController addAction:[UIAlertAction actionWithTitle:[NSBundle tz_localizedStringForKey:@"OK"] style:UIAlertActionStyleDefault handler:nil]];
     [self presentViewController:alertController animated:YES completion:nil];
     return alertController;
 }
 
 - (void)captureOutput:(AVCaptureFileOutput *)output didFinishRecordingToOutputFileAtURL:(NSURL *)outputFileURL fromConnections:(NSArray<AVCaptureConnection *> *)connections error:(NSError *)error
 {
-    // MARK: 这条逻辑 稍后跟进
+    // MARK: 对视频长度进行判断
     if (CMTimeGetSeconds(output.recordedDuration) < 3) {
         if (self.allowTakePhoto) {
             //视频长度小于1s 允许拍照则拍照，不允许拍照，则保存小于1s的视频
             ZLLoggerDebug(@"视频长度小于1s，提醒重新拍摄");
-            [self showAlertWithTitle:@"视频长度小于3s, 请重新拍摄!"];
-            [self.toolView retake];
+            UIAlertController *al = [self showAlertWithTitle:@"录制时间太短，暂不保存"];
+            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 1.25 * NSEC_PER_SEC);
+            dispatch_after(popTime, dispatch_get_main_queue(), ^{
+                [al dismissViewControllerAnimated:true completion:^{
+                    [self.toolView retake];
+                }];
+            });
             return;
         }
     }
