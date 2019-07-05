@@ -457,7 +457,6 @@ static dispatch_once_t onceToken;
 - (PHImageRequestID)getOriginalPhotoDataWithAsset:(PHAsset *)asset progressHandler:(void (^)(double progress, NSError *error, BOOL *stop, NSDictionary *info))progressHandler completion:(void (^)(NSData *data,NSDictionary *info,BOOL isDegraded))completion {
     PHImageRequestOptions *option = [[PHImageRequestOptions alloc] init];
     option.networkAccessAllowed = YES;
-    [option setSynchronous:YES];
     if ([[asset valueForKey:@"filename"] hasSuffix:@"GIF"]) {
         // if version isn't PHImageRequestOptionsVersionOriginal, the gif may cann't play
         option.version = PHImageRequestOptionsVersionOriginal;

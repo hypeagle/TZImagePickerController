@@ -566,7 +566,7 @@
 - (void)setupCamera
 {
     self.session = [[AVCaptureSession alloc] init];
-    
+//    self.session.usesApplicationAudioSession = NO;
     //相机画面输入流
     self.videoInput = [AVCaptureDeviceInput deviceInputWithDevice:[self backCamera] error:nil];
     

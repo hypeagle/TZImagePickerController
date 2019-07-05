@@ -6,8 +6,8 @@
 //  Copyright © 2015年 long. All rights reserved.
 //
 
-#ifndef ZLDefine_h
-#define ZLDefine_h
+#ifndef TZDefine_h
+#define TZDefine_h
 
 #import <UIKit/UIKit.h>
 #import "TZImagePickerController.h"
@@ -87,6 +87,8 @@
 
 #define TZPreviewPhotoObj @"TZPreviewPhotoObj"
 #define TZPreviewPhotoTyp @"TZPreviewPhotoTyp"
+
+
 
 typedef NS_ENUM(NSUInteger, ZLLanguageType) {
     //跟随系统语言，默认
@@ -258,4 +260,4 @@ static inline NSDictionary * GetClipRatio(NSInteger value1, NSInteger value2) {
     return @{ClippingRatioValue1: @(value1), ClippingRatioValue2: @(value2), ClippingRatioTitleFormat: @"%g : %g"};
 }
 
-#endif /* ZLDefine_h */
+#endif /* TZDefine_h */

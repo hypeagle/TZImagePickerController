@@ -36,6 +36,7 @@ typedef NS_ENUM(NSUInteger, TZCaptureSessionPreset) {
     TZCaptureSessionPreset3840x2160,
 };
 
+
 @class TZAlbumCell, TZAssetCell;
 @protocol TZImagePickerControllerDelegate;
 @interface TZImagePickerController : UINavigationController

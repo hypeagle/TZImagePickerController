@@ -6,7 +6,6 @@
 //  Copyright © 2015年 谭真. All rights reserved.
 //
 
-#import "TZCustomCamera.h"
 #import "TZPhotoPickerController.h"
 #import "TZImagePickerController.h"
 #import "TZPhotoPreviewController.h"
@@ -19,6 +18,7 @@
 #import "TZLocationManager.h"
 #import <MobileCoreServices/MobileCoreServices.h>
 #import "TZImageRequestOperation.h"
+#import "TZCustomCamera.h"
 
 @interface TZPhotoPickerController ()<UICollectionViewDataSource,UICollectionViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIAlertViewDelegate> {
     NSMutableArray *_models;

@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08007BC022CF6F12008B66EA /* TZCustomCamera.h in Headers */ = {isa = PBXBuildFile; fileRef = 083DD68C22C20A9B0018CE91 /* TZCustomCamera.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		083DD68E22C20A9B0018CE91 /* TZDefine.h in Headers */ = {isa = PBXBuildFile; fileRef = 083DD68B22C20A9B0018CE91 /* TZDefine.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		083DD69A22C20B530018CE91 /* ZLPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 083DD69822C20B520018CE91 /* ZLPlayer.h */; };
 		083DD69B22C20B530018CE91 /* ZLPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 083DD69922C20B520018CE91 /* ZLPlayer.m */; };
 		0872FB2F22C230AC003CA01D /* TZCustomCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 083DD68A22C20A9B0018CE91 /* TZCustomCamera.m */; };
-		0872FB3122C230B3003CA01D /* TZCustomCamera.h in Headers */ = {isa = PBXBuildFile; fileRef = 083DD68C22C20A9B0018CE91 /* TZCustomCamera.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0872FB3322C23106003CA01D /* TZAssetCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 900EEFFF1C2BD7E400EA709B /* TZAssetCell.h */; };
 		0872FB3422C23138003CA01D /* TZTestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9038D5901C3974F0007DE549 /* TZTestCell.m */; };
 		0872FB3722C231B6003CA01D /* TZCustomCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 083DD68A22C20A9B0018CE91 /* TZCustomCamera.m */; };
@@ -405,8 +405,8 @@
 				9F763A6C1FA0733100D9E526 /* TZAssetModel.h in Headers */,
 				9F763A731FA0741D00D9E526 /* TZVideoPlayerController.h in Headers */,
 				9F763A741FA0741D00D9E526 /* TZGifPhotoPreviewController.h in Headers */,
+				08007BC022CF6F12008B66EA /* TZCustomCamera.h in Headers */,
 				9F763A761FA0741D00D9E526 /* TZImageManager.h in Headers */,
-				0872FB3122C230B3003CA01D /* TZCustomCamera.h in Headers */,
 				083DD69A22C20B530018CE91 /* ZLPlayer.h in Headers */,
 				083DD68E22C20A9B0018CE91 /* TZDefine.h in Headers */,
 				9F763A781FA0741D00D9E526 /* TZLocationManager.h in Headers */,
