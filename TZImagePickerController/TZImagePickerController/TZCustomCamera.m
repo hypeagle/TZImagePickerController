@@ -888,9 +888,9 @@
 - (void)onDismiss
 {
     // 点击退出后立马停止视频播报
-    if (_playerView) {
-        [_playerView pause];
-    }
+//    if (_playerView) {
+//        [_playerView pause];
+//    }
     dispatch_async(dispatch_get_main_queue(), ^{
         [self dismissViewControllerAnimated:YES completion:nil];
     });
