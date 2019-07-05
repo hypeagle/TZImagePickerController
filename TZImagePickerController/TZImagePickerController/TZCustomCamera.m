@@ -887,13 +887,13 @@
 //dismiss
 - (void)onDismiss
 {
-    // 点击退出后立马停止视频播报
-//    if (_playerView) {
-//        [_playerView pause];
-//    }
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self dismissViewControllerAnimated:YES completion:nil];
+    [self.playerView reset];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self dismissViewControllerAnimated:YES completion:nil];
+        });
     });
+
 }
 
 - (void)playVideo
@@ -929,7 +929,6 @@
 
 - (UIAlertController *)showAlertWithTitle:(NSString *)title {
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:nil preferredStyle:UIAlertControllerStyleAlert];
-//    [alertController addAction:[UIAlertAction actionWithTitle:[NSBundle tz_localizedStringForKey:@"OK"] style:UIAlertActionStyleDefault handler:nil]];
     [self presentViewController:alertController animated:YES completion:nil];
     return alertController;
 }
@@ -940,10 +939,10 @@
     if (CMTimeGetSeconds(output.recordedDuration) < 3) {
         if (self.allowTakePhoto) {
             //视频长度小于1s 允许拍照则拍照，不允许拍照，则保存小于1s的视频
-            ZLLoggerDebug(@"视频长度小于1s，提醒重新拍摄");
+            ZLLoggerDebug(@"视频长度小于3s，提醒重新拍摄");
             [self.toolView retake];
             UIAlertController *al = [self showAlertWithTitle:@"录制时间太短，暂不保存"];
-            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 1.25 * NSEC_PER_SEC);
+            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 0.5 * NSEC_PER_SEC);
             dispatch_after(popTime, dispatch_get_main_queue(), ^{
                 [al dismissViewControllerAnimated:true completion:^{
                     
@@ -954,7 +953,7 @@
     }
     
     self.videoUrl = outputFileURL;
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self playVideo];
     });
 }
