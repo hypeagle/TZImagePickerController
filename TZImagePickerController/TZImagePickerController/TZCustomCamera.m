@@ -448,7 +448,6 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    [_playerView pause];
     [UIApplication sharedApplication].statusBarHidden = NO;
     [self.motionManager stopDeviceMotionUpdates];
     self.motionManager = nil;
@@ -888,6 +887,10 @@
 //dismiss
 - (void)onDismiss
 {
+    // 点击退出后立马停止视频播报
+    if (_playerView) {
+        [_playerView pause];
+    }
     dispatch_async(dispatch_get_main_queue(), ^{
         [self dismissViewControllerAnimated:YES completion:nil];
     });
@@ -951,7 +954,7 @@
     }
     
     self.videoUrl = outputFileURL;
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self playVideo];
     });
 }
