@@ -105,8 +105,8 @@ typedef NS_ENUM(NSUInteger, TZCaptureSessionPreset) {
 @property(nonatomic, assign) BOOL allowTakeVideo;
 /// Default value is 10 minutes / 视频最大拍摄时间，默认是10分钟，单位是秒
 @property (assign, nonatomic) NSTimeInterval videoMaximumDuration;
-/// 视频录制分辨率 默认 TZCaptureSessionPreset1280x720
-@property (assign, nonatomic) TZCaptureSessionPreset videoQuality;
+/// 视频录制分辨率 默认 UIImagePickerControllerQualityType1280x720
+@property (assign, nonatomic) UIImagePickerControllerQualityType videoQuality;
 ///录制视频时候进度条颜色 默认 RGB(80, 180, 234)
 @property (nonatomic, strong) UIColor *circleProgressColor;
 

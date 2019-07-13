@@ -673,44 +673,27 @@ static CGFloat itemMargin = 5;
             strongSelf.location = nil;
         }];
     }
-//    self->_imagePickerVc.videoQuality
-    TZCustomCamera *_imagePickerVc = [[TZCustomCamera alloc] init];
-    /// 只支持mp4
-    _imagePickerVc.videoType = TZExportVideoTypeMp4;
-    _imagePickerVc.allowTakePhoto = tzImagePickerVc.allowTakePicture;
-    _imagePickerVc.allowRecordVideo = tzImagePickerVc.allowTakeVideo;
-    _imagePickerVc.maxRecordDuration = tzImagePickerVc.videoMaximumDuration;
-    _imagePickerVc.sessionPreset = tzImagePickerVc.videoQuality;
-    _imagePickerVc.circleProgressColor = tzImagePickerVc.circleProgressColor;
-    __weak typeof(self) weakSelf = self;
-    _imagePickerVc.doneBlock = ^(UIImage *image, NSURL *videoUrl) {
-        __strong typeof(weakSelf) strongSelf = weakSelf;
-        if (image != nil) {
-            TZImagePickerController *imagePickerVc = (TZImagePickerController *)strongSelf.navigationController;
-            [imagePickerVc showProgressHUD];
-            UIImage *photo = image;
-            if (photo) {
-                [[TZImageManager manager] savePhotoWithImage:photo location:strongSelf.location completion:^(PHAsset *asset, NSError *error){
-                    if (!error) {
-                        [strongSelf addPHAsset:asset];
-                    }
-                }];
-                strongSelf.location = nil;
-            }
-        } else if (videoUrl != nil) {
-            TZImagePickerController *imagePickerVc = (TZImagePickerController *)strongSelf.navigationController;
-            [imagePickerVc showProgressHUD];
-            if (videoUrl) {
-                [[TZImageManager manager] saveVideoWithUrl:videoUrl location:strongSelf.location completion:^(PHAsset *asset, NSError *error) {
-                    if (!error) {
-                        [strongSelf addPHAsset:asset];
-                    }
-                }];
-                strongSelf.location = nil;
-            }
+    UIImagePickerControllerSourceType sourceType = UIImagePickerControllerSourceTypeCamera;
+    if ([UIImagePickerController isSourceTypeAvailable: sourceType]) {
+        self.imagePickerVc.sourceType = sourceType;
+        NSMutableArray *mediaTypes = [NSMutableArray array];
+        if (tzImagePickerVc.allowTakePicture) {
+            [mediaTypes addObject:(NSString *)kUTTypeImage];
         }
-    };
-    [self presentViewController:_imagePickerVc animated:YES completion:nil];
+        if (tzImagePickerVc.allowTakeVideo) {
+            [mediaTypes addObject:(NSString *)kUTTypeMovie];
+            self.imagePickerVc.videoMaximumDuration = tzImagePickerVc.videoMaximumDuration;
+            self.imagePickerVc.videoQuality = tzImagePickerVc.videoQuality;
+        }
+        self.imagePickerVc.mediaTypes= mediaTypes;
+        
+        if (tzImagePickerVc.uiImagePickerControllerSettingBlock) {
+            tzImagePickerVc.uiImagePickerControllerSettingBlock(_imagePickerVc);
+        }
+        [self presentViewController:_imagePickerVc animated:YES completion:nil];
+    } else {
+        NSLog(@"模拟器中无法打开照相机,请在真机中使用");
+    }
 }
 
 - (void)refreshBottomToolBarStatus {

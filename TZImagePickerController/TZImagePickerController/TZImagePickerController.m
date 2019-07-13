@@ -167,7 +167,7 @@
         self.allowTakePicture = YES;
         self.allowTakeVideo = YES;
         self.videoMaximumDuration = 10 * 60;
-        self.videoQuality = TZCaptureSessionPreset1280x720;
+        self.videoQuality = UIImagePickerControllerQualityTypeMedium;
         self.circleProgressColor = kRGB(80, 180, 234);
         self.sortAscendingByModificationDate = YES;
         self.autoDismiss = YES;
