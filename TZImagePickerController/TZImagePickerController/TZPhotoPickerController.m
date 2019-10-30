@@ -534,6 +534,14 @@ static CGFloat itemMargin = 5;
         cell.cannotSelectLayerButton.hidden = NO;
     } else {
         cell.cannotSelectLayerButton.hidden = YES;
+        
+        // 隐藏没有位置信息的图片 or 视频
+        PHAsset *phAsset = (PHAsset *)cell.model.asset;
+        
+        if (phAsset.location == nil) {
+            cell.cannotSelectLayerButton.backgroundColor = tzImagePickerVc.cannotSelectLayerColor;
+            cell.cannotSelectLayerButton.hidden = NO;
+        }
     }
     
     __weak typeof(cell) weakCell = cell;
@@ -544,44 +552,49 @@ static CGFloat itemMargin = 5;
         __strong typeof(weakSelf) strongSelf = weakSelf;
         __strong typeof(weakLayer) strongLayer = weakLayer;
         TZImagePickerController *tzImagePickerVc = (TZImagePickerController *)strongSelf.navigationController;
-        // 1. cancel select / 取消选择
-        if (isSelected) {
-            strongCell.selectPhotoButton.selected = NO;
-            model.isSelected = NO;
-            NSArray *selectedModels = [NSArray arrayWithArray:tzImagePickerVc.selectedModels];
-            for (TZAssetModel *model_item in selectedModels) {
-                if ([model.asset.localIdentifier isEqualToString:model_item.asset.localIdentifier]) {
-                    [tzImagePickerVc removeSelectedModel:model_item];
-                    break;
+        
+        PHAsset *phAsset = (PHAsset *)strongCell.model.asset;
+        if (phAsset != nil && phAsset.location != nil) {
+            // 1. cancel select / 取消选择
+            if (isSelected) {
+                strongCell.selectPhotoButton.selected = NO;
+                model.isSelected = NO;
+                NSArray *selectedModels = [NSArray arrayWithArray:tzImagePickerVc.selectedModels];
+                for (TZAssetModel *model_item in selectedModels) {
+                    if ([model.asset.localIdentifier isEqualToString:model_item.asset.localIdentifier]) {
+                        [tzImagePickerVc removeSelectedModel:model_item];
+                        break;
+                    }
                 }
-            }
-            [strongSelf refreshBottomToolBarStatus];
-            if (tzImagePickerVc.showSelectedIndex || tzImagePickerVc.showPhotoCannotSelectLayer) {
-                [[NSNotificationCenter defaultCenter] postNotificationName:@"TZ_PHOTO_PICKER_RELOAD_NOTIFICATION" object:strongSelf.navigationController];
-            }
-            [UIView showOscillatoryAnimationWithLayer:strongLayer type:TZOscillatoryAnimationToSmaller];
-        } else {
-            // 2. select:check if over the maxImagesCount / 选择照片,检查是否超过了最大个数的限制
-            if (tzImagePickerVc.selectedModels.count < tzImagePickerVc.maxImagesCount) {
-                if (tzImagePickerVc.maxImagesCount == 1 && !tzImagePickerVc.allowPreview) {
-                    model.isSelected = YES;
-                    [tzImagePickerVc addSelectedModel:model];
-                    [strongSelf doneButtonClick];
-                    return;
-                }
-                strongCell.selectPhotoButton.selected = YES;
-                model.isSelected = YES;
-                [tzImagePickerVc addSelectedModel:model];
+                [strongSelf refreshBottomToolBarStatus];
                 if (tzImagePickerVc.showSelectedIndex || tzImagePickerVc.showPhotoCannotSelectLayer) {
                     [[NSNotificationCenter defaultCenter] postNotificationName:@"TZ_PHOTO_PICKER_RELOAD_NOTIFICATION" object:strongSelf.navigationController];
                 }
-                [strongSelf refreshBottomToolBarStatus];
                 [UIView showOscillatoryAnimationWithLayer:strongLayer type:TZOscillatoryAnimationToSmaller];
             } else {
-                NSString *title = [NSString stringWithFormat:[NSBundle tz_localizedStringForKey:@"Select a maximum of %zd photos"], tzImagePickerVc.maxImagesCount];
-                [tzImagePickerVc showAlertWithTitle:title];
+                // 2. select:check if over the maxImagesCount / 选择照片,检查是否超过了最大个数的限制
+                if (tzImagePickerVc.selectedModels.count < tzImagePickerVc.maxImagesCount) {
+                    if (tzImagePickerVc.maxImagesCount == 1 && !tzImagePickerVc.allowPreview) {
+                        model.isSelected = YES;
+                        [tzImagePickerVc addSelectedModel:model];
+                        [strongSelf doneButtonClick];
+                        return;
+                    }
+                    strongCell.selectPhotoButton.selected = YES;
+                    model.isSelected = YES;
+                    [tzImagePickerVc addSelectedModel:model];
+                    if (tzImagePickerVc.showSelectedIndex || tzImagePickerVc.showPhotoCannotSelectLayer) {
+                        [[NSNotificationCenter defaultCenter] postNotificationName:@"TZ_PHOTO_PICKER_RELOAD_NOTIFICATION" object:strongSelf.navigationController];
+                    }
+                    [strongSelf refreshBottomToolBarStatus];
+                    [UIView showOscillatoryAnimationWithLayer:strongLayer type:TZOscillatoryAnimationToSmaller];
+                } else {
+                    NSString *title = [NSString stringWithFormat:[NSBundle tz_localizedStringForKey:@"Select a maximum of %zd photos"], tzImagePickerVc.maxImagesCount];
+                    [tzImagePickerVc showAlertWithTitle:title];
+                }
             }
         }
+        phAsset = nil;
     };
     return cell;
 }
@@ -598,6 +611,12 @@ static CGFloat itemMargin = 5;
         index = indexPath.item - 1;
     }
     TZAssetModel *model = _models[index];
+    
+    PHAsset *phAsset = (PHAsset *)model.asset;
+    if (phAsset.location == nil) {
+        return;
+    }
+    
     if (model.type == TZAssetModelMediaTypeVideo && !tzImagePickerVc.allowPickingMultipleVideo) {
         if (tzImagePickerVc.selectedModels.count > 0) {
             TZImagePickerController *imagePickerVc = (TZImagePickerController *)self.navigationController;

@@ -215,7 +215,7 @@
             imagePickerVc.allowPickingOriginalPhoto = self.allowPickingOriginalPhotoSwitch.isOn;
             imagePickerVc.allowPickingMultipleVideo = self.allowPickingMuitlpleVideoSwitch.isOn;
             
-            imagePickerVc.hideNotLocation = YES;
+            imagePickerVc.hideNotLocation = NO;
             imagePickerVc.showSelectedIndex = self.showSelectedIndexSwitch.isOn;
             imagePickerVc.isSelectOriginalPhoto = _isSelectOriginalPhoto;
             [imagePickerVc setDidFinishPickingPhotosHandle:^(NSArray<UIImage *> *photos, NSArray *assets, BOOL isSelectOriginalPhoto) {
@@ -269,7 +269,7 @@
         // 1.设置目前已经选中的图片数组
         imagePickerVc.selectedAssets = _selectedAssets; // 目前已经选中的图片数组
     }
-    imagePickerVc.hideNotLocation = YES;
+    imagePickerVc.hideNotLocation = NO;
     imagePickerVc.allowTakePicture = self.showTakePhotoBtnSwitch.isOn; // 在内部显示拍照按钮
     imagePickerVc.allowTakeVideo = self.showTakeVideoBtnSwitch.isOn;   // 在内部显示拍视频按
     imagePickerVc.videoMaximumDuration = 15; // 视频最大拍摄时间
@@ -379,7 +379,7 @@
     // imagePickerVc.languageBundle = [NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:@"tz-ru" ofType:@"lproj"]];
     
 #pragma mark - 到这里为止
-    imagePickerVc.hideNotLocation = YES;
+    imagePickerVc.hideNotLocation = NO;
     // You can get the photos by block, the same as by delegate.
     // 你可以通过block或者代理，来得到用户选择的照片.
     [imagePickerVc setDidFinishPickingPhotosHandle:^(NSArray<UIImage *> *photos, NSArray *assets, BOOL isSelectOriginalPhoto) {

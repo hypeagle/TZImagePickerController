@@ -207,6 +207,14 @@
         self.cannotSelectLayerButton.hidden = NO;
     } else {
         self.cannotSelectLayerButton.hidden = YES;
+        
+        // 隐藏没有位置信息的图片 or 视频
+        PHAsset *phAsset = (PHAsset *)self.model.asset;
+        
+        if (phAsset.location == nil) {
+            self.cannotSelectLayerButton.backgroundColor = tzImagePickerVc.cannotSelectLayerColor;
+            self.cannotSelectLayerButton.hidden = NO;
+        }
     }
 }
 
