@@ -537,7 +537,7 @@ static CGFloat itemMargin = 5;
         
         // 隐藏没有位置信息的图片 or 视频
         PHAsset *phAsset = (PHAsset *)cell.model.asset;
-        if (phAsset.location == nil) {
+        if (phAsset.location == nil && tzImagePickerVc.cannotSelectNoLocation) {
             cell.cannotSelectLayerButton.backgroundColor = tzImagePickerVc.cannotSelectLayerColor;
             cell.cannotSelectLayerButton.hidden = NO;
         }
@@ -554,7 +554,7 @@ static CGFloat itemMargin = 5;
         
         // 隐藏没有位置信息的图片 or 视频
         PHAsset *phAsset = (PHAsset *)strongCell.model.asset;
-        if (phAsset != nil && phAsset.location != nil) {
+        if (!(phAsset.location == nil && tzImagePickerVc.cannotSelectNoLocation)) {
             // 1. cancel select / 取消选择
             if (isSelected) {
                 strongCell.selectPhotoButton.selected = NO;
@@ -613,7 +613,7 @@ static CGFloat itemMargin = 5;
     TZAssetModel *model = _models[index];
     
     PHAsset *phAsset = (PHAsset *)model.asset;
-    if (phAsset.location == nil) {
+    if (phAsset.location == nil && tzImagePickerVc.cannotSelectNoLocation) {
         return;
     }
     

@@ -353,6 +353,10 @@
     [TZImagePickerConfig sharedInstance].showPhotoCannotSelectLayer = showPhotoCannotSelectLayer;
 }
 
+- (void)setCannotSelectNoLocation:(BOOL)cannotSelectNoLocation {
+    _cannotSelectNoLocation = cannotSelectNoLocation;
+}
+
 - (void)setNotScaleImage:(BOOL)notScaleImage {
     _notScaleImage = notScaleImage;
     [TZImagePickerConfig sharedInstance].notScaleImage = notScaleImage;

@@ -210,7 +210,7 @@
         
         // 隐藏没有位置信息的图片 or 视频
         PHAsset *phAsset = (PHAsset *)self.model.asset;
-        if (phAsset.location == nil) {
+        if (phAsset.location == nil && tzImagePickerVc.cannotSelectNoLocation) {
             self.cannotSelectLayerButton.backgroundColor = tzImagePickerVc.cannotSelectLayerColor;
             self.cannotSelectLayerButton.hidden = NO;
         }
